@@ -37,7 +37,7 @@ Revise sets of symbols and images on any topic easily. Created with Python and T
 - Dymanic placement and scaling for Tkinter GUI toolkit widgets.
 
 
-# References
+### References
 
 - [Icon](https://icon-icons.com/icon/eating-placesreserve-restaurant-bar-food/193788)
 - [Logic Gate Symbols](https://www.pinterest.com.au/pin/53480314312359767/)
