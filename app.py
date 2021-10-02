@@ -48,9 +48,11 @@ class symbolRevisionWindow:
         exit_btn.place(relx=0.5, rely=0.95, relw=0.12, relh=0.04, anchor="center")
 
 
+    def startSession(self, pack_choice):
+        self.setupSession(pack_choice)
+        self.introducePage()
         
-        start_btn = Button(homeFrame, font=("Avalon", 15), text="Start", command=lambda: self.startSession(pack_choice.get()))
-        start_btn.place(relx=0.5, rely=0.7, relw=0.2, relh=0.05, anchor="center")
+
 
 if __name__ == "__main__":
     root = Tk()
