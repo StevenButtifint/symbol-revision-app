@@ -113,6 +113,14 @@ class symbolRevisionWindow:
             print("wrong")
 
 
+
+
+    def getTileImage(self, img_name, w, h):
+        image = self.getImage(img_name)
+        image = self.resizeImage(image, w, h)
+        return ImageTk.PhotoImage(image)
+
+
 if __name__ == "__main__":
     root = Tk()
     symbolRevisionWindow(root)
