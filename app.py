@@ -87,6 +87,32 @@ class symbolRevisionWindow:
         mainloop()
 
 
+    def checkTileClick(self, tile_name, tile, question_label):
+        if tile_name == self.correct_item:
+            print("correct")
+            
+            if not self.full_grid:
+                self.introducePage()
+                
+            elif self.introduced_items != []:
+                self.removeItem(self.correct_item, self.introduced_items)
+                tile.destroy()
+
+                if self.introduced_items != []:
+                    self.correct_item = os.path.basename(random.choice(self.introduced_items))[:-4]
+                    question_label["text"] = "What is the image for \n" + self.correct_item
+                else:
+                    self.full_grid = False
+                    if self.pack_items == []:
+                        self.makeHomePage()
+                    else:
+                        self.introducePage()                
+
+        elif tile["bg"] != "red":
+            tile["bg"] = "red"
+            print("wrong")
+
+
 if __name__ == "__main__":
     root = Tk()
     symbolRevisionWindow(root)
