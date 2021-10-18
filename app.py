@@ -53,6 +53,31 @@ class symbolRevisionWindow:
         self.introducePage()
         
 
+    def introducePage(self):
+        introduction_frame = self.makeFrame(self.window, 0, 0, 1, 1, "nw", self.bg_colour)
+
+        #pick random item, add to introduced list
+        new_item = random.choice(self.pack_items)
+        self.introduced_items.append(new_item)
+        self.pack_items.remove(new_item)
+
+        if (len(self.introduced_items) == 16) or (self.pack_items == []):
+            self.full_grid = True
+
+        new_item_name = os.path.basename(new_item)[:-4]
+
+        question_label = Label(introduction_frame, font=("Avalon", 20), text="This is the image for \n" + new_item_name, bg=self.bg_colour)
+        question_label.place(relx=0.5, rely=0.25, anchor="center")
+
+        new_item_image = self.getTileImage(new_item, 300, 300)
+        new_item_label = Label(introduction_frame, image = new_item_image)
+        new_item_label.place(relx=0.5, rely=0.5, anchor="center")
+        
+        ok_button = Button(introduction_frame, font=("Avalon", 16), text="OK",
+                           bg=self.fg_colour, command=lambda: self.makeRoundPage())
+        ok_button.place(relx=0.5, rely=0.8, relw=0.2, relh=0.08, anchor="center")
+        mainloop()
+
 
 if __name__ == "__main__":
     root = Tk()
