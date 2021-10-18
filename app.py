@@ -87,6 +87,41 @@ class symbolRevisionWindow:
         mainloop()
 
 
+    def makeRoundPage(self):
+
+        round_frame = self.makeFrame(self.window, 0, 0, 1, 1, "nw", "black")
+        
+        header_frame = self.makeFrame(round_frame, 0, 0, 1, 0.3, "nw", self.bg_colour)
+        tiles_frame = self.makeFrame(round_frame, 0, 0.3, 1, 0.7, "nw", self.bg_colour)
+
+        #load all png items from pack location
+        all_items = self.getItems(f'res/packs/{self.current_pack}', "png")
+
+        #pick name from pack and add to end of question
+        self.correct_item = os.path.basename(random.choice(self.introduced_items))[:-4]
+        
+        question_label = Label(header_frame, font=("Avalon", 20), text="What is the image for\n " +
+                               self.correct_item, bg=self.bg_colour)
+        question_label.place(relx=0.5, rely=0.5, anchor="center")
+
+        random.shuffle(self.introduced_items)
+
+        tile_images = []
+        tile_names = []
+        
+        for item in self.introduced_items:
+            tile_images.append(self.getTileImage(item, 160, 160))
+            tile_names.append(os.path.basename(item)[:-4])
+
+        for x in range(len(self.introduced_items)):
+            tile = Button(tiles_frame, image=tile_images[x])
+            tile["command"] = lambda name=tile_names[x], tile=tile: self.checkTileClick(name, tile, question_label)
+            tile["bg"] = self.fg_colour
+            tile.place(relx=((x%4)*0.25), rely=((x//4)*0.25), relw=0.25, relh=0.25, anchor="nw")
+
+        mainloop()#makes images show on buttons keeps page live?
+
+
     def checkTileClick(self, tile_name, tile, question_label):
         if tile_name == self.correct_item:
             print("correct")
