@@ -53,6 +53,14 @@ class symbolRevisionWindow:
         self.introducePage()
         
 
+    def setupSession(self, pack_choice):
+        self.current_pack = pack_choice
+        self.lives = 3
+        self.introduced_items.clear()
+        self.pack_items.clear()
+        self.pack_items = self.getItems(f'res/packs/{self.current_pack}', "png")
+        
+
     def introducePage(self):
         introduction_frame = self.makeFrame(self.window, 0, 0, 1, 1, "nw", self.bg_colour)
 
