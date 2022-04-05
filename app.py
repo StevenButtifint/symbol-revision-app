@@ -8,6 +8,7 @@ from PIL import Image, ImageTk
 from os import listdir
 
 
+from constants import *
 
 
 class symbolRevisionWindow:
