@@ -35,6 +35,8 @@ Revise sets of symbols and images on any topic easily. Created with Python and T
 ### What I Learned
 
 - Dymanic placement and scaling for Tkinter GUI toolkit widgets.
+- Improved understanding of pythonic imports and static methods.
+
 
 
 ### References
