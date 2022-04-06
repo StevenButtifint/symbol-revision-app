@@ -50,6 +50,13 @@ class symbolRevisionWindow:
 
 
     @staticmethod
+    def _makeLabel(frame, font, text, fg, bg, rx, ry, anchor):
+        label = tk.Label(frame, font=font, text=text, fg=fg, bg=bg)
+        label.place(relx=rx, rely=ry, anchor=anchor)
+        return label
+
+
+    @staticmethod
     def _makeOptionMenu(frame, choice, packs, bg, font, rx, ry, rw, rh, anchor):
         w = tk.OptionMenu(frame, choice, *packs)
         w.config(bg=bg, relief="solid", highlightthickness=0, font=font)
