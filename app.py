@@ -49,6 +49,14 @@ class symbolRevisionWindow:
         exit_btn.place(relx=0.5, rely=0.95, relw=0.12, relh=0.04, anchor="center")
 
 
+    @staticmethod
+    def _makeOptionMenu(frame, choice, packs, bg, font, rx, ry, rw, rh, anchor):
+        w = tk.OptionMenu(frame, choice, *packs)
+        w.config(bg=bg, relief="solid", highlightthickness=0, font=font)
+        w["menu"].config(bg=bg, fg=FONT_COLOUR, relief="solid")
+        w.place(relx=rx, rely=ry, relw=rw, relh=rh, anchor=anchor)
+
+
     def startSession(self, pack_choice):
         self.setupSession(pack_choice)
         self.introducePage()
