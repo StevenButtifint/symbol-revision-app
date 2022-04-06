@@ -50,6 +50,13 @@ class symbolRevisionWindow:
 
 
     @staticmethod
+    def _makeButton(frame, font, text, bg, rx, ry, rw, rh, anchor, command):
+        button = tk.Button(frame, font=font, text=text, bg=bg, command = lambda: command())
+        button.place(relx=rx, rely=ry, relw=rw, relh=rh, anchor=anchor)
+        return button
+
+
+    @staticmethod
     def _makeLabel(frame, font, text, fg, bg, rx, ry, anchor):
         label = tk.Label(frame, font=font, text=text, fg=fg, bg=bg)
         label.place(relx=rx, rely=ry, anchor=anchor)
