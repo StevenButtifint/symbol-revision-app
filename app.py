@@ -1,3 +1,5 @@
+from PIL import Image, ImageTk
+from os import listdir
 import tkinter as tk
 import random
 import glob
@@ -5,9 +7,6 @@ import os
 
 from tkinter import mainloop, Tk, Frame, Grid, N, E, S, W, Button, StringVar, OptionMenu, Label
 from PIL import Image, ImageTk
-from os import listdir
-
-
 from constants import *
 
 
@@ -180,6 +179,6 @@ class symbolRevisionWindow:
 
 
 if __name__ == "__main__":
-    root = Tk()
+    root = tk.Tk()
     symbolRevisionWindow(root)
 
