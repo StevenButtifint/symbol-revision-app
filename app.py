@@ -170,6 +170,11 @@ class symbolRevisionWindow:
             print("wrong")
 
 
+    @staticmethod
+    def removeItem(item, items):
+        for content in items:
+            if content[:-4].endswith(item):
+                items.remove(content)
 
                 
     @staticmethod
