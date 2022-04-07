@@ -171,6 +171,11 @@ class symbolRevisionWindow:
 
 
 
+                
+    @staticmethod
+    def getItems(location, extension):
+        return glob.glob(f'{location}/*.{extension}')
+
 
     @staticmethod
     def makeFrame(parent, relx, rely, relw, relh, anchor, bg):
