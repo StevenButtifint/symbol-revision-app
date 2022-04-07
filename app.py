@@ -172,6 +172,13 @@ class symbolRevisionWindow:
 
 
 
+    @staticmethod
+    def makeFrame(parent, relx, rely, relw, relh, anchor, bg):
+        frame = tk.Frame(parent, bg=bg)
+        frame.place(relx=relx, rely=rely, relw=relw, relh=relh, anchor=anchor)
+        return frame
+
+
     def getTileImage(self, img_name, w, h):
         image = self.getImage(img_name)
         image = self.resizeImage(image, w, h)
