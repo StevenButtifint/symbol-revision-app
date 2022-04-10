@@ -30,11 +30,8 @@ class symbolRevisionWindow:
 
     def makeHomePage(self):
         homeFrame = self.makeFrame(self.window, 0.5, 0.5, 1, 1, "center", self.bg_colour)
-
-        question_label = Label(homeFrame, font=("Avalon", 15), text="Pick the image pack to learn:", fg="black", bg=self.bg_colour)
-        question_label.place(relx=0.5, rely=0.42, anchor="center")
-        
         pack_choice = StringVar(homeFrame)
+        self._makeLabel(homeFrame, (FONT_TYPE, 15), "Pick the image pack to learn:", FONT_COLOUR, COLOUR_LIGHT, 0.5, 0.42,"center")
         pack_choice.set(self.current_pack) # default choice
         w = OptionMenu(homeFrame, pack_choice, *self.packs)
         w.config(bg=self.fg_colour, relief="solid", highlightthickness=0, font=("Avalon", 16))
