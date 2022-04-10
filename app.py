@@ -40,12 +40,8 @@ class symbolRevisionWindow:
         w.config(bg=self.fg_colour, relief="solid", highlightthickness=0, font=("Avalon", 16))
         w["menu"].config(bg=self.fg_colour, fg="black", relief="solid")
         w.place(relx=0.57, rely=0.5, relw=0.5, relh=0.08, anchor="e")
-        
-        start_btn = Button(homeFrame, font=("Avalon", 16), text="START", bg=self.fg_colour, command=lambda: self.startSession(pack_choice.get()))
-        start_btn.place(relx=0.6, rely=0.5, relw=0.3, relh=0.08, anchor="w")
-        
-        exit_btn = Button(homeFrame, font=("Avalon", 13), text="EXIT", bg=self.fg_colour, command=lambda: quit())
-        exit_btn.place(relx=0.5, rely=0.95, relw=0.12, relh=0.04, anchor="center")
+        self._makeButton(homeFrame, (FONT_TYPE, 16), "START", COLOUR_DARK, 0.6, 0.5, 0.3, 0.08, "w", lambda: self.startSession(pack_choice.get()))
+        self._makeButton(homeFrame, (FONT_TYPE, 13), "EXIT", COLOUR_DARK, 0.5, 0.95, 0.12, 0.04, "center", lambda: quit())
 
 
     @staticmethod
