@@ -29,14 +29,11 @@ class symbolRevisionWindow:
 
 
     def makeHomePage(self):
-        homeFrame = self.makeFrame(self.window, 0.5, 0.5, 1, 1, "center", self.bg_colour)
-        pack_choice = StringVar(homeFrame)
+        homeFrame = self.makeFrame(self.window, 0.5, 0.5, 1, 1, "center", COLOUR_LIGHT)
         self._makeLabel(homeFrame, (FONT_TYPE, 15), "Pick the image pack to learn:", FONT_COLOUR, COLOUR_LIGHT, 0.5, 0.42,"center")
+        pack_choice = tk.StringVar(homeFrame)
         pack_choice.set(self.current_pack) # default choice
-        w = OptionMenu(homeFrame, pack_choice, *self.packs)
-        w.config(bg=self.fg_colour, relief="solid", highlightthickness=0, font=("Avalon", 16))
-        w["menu"].config(bg=self.fg_colour, fg="black", relief="solid")
-        w.place(relx=0.57, rely=0.5, relw=0.5, relh=0.08, anchor="e")
+        self._makeOptionMenu(homeFrame, pack_choice, self.packs, COLOUR_DARK, (FONT_TYPE, 16), 0.57, 0.5, 0.5, 0.08, "e")
         self._makeButton(homeFrame, (FONT_TYPE, 16), "START", COLOUR_DARK, 0.6, 0.5, 0.3, 0.08, "w", lambda: self.startSession(pack_choice.get()))
         self._makeButton(homeFrame, (FONT_TYPE, 13), "EXIT", COLOUR_DARK, 0.5, 0.95, 0.12, 0.04, "center", lambda: quit())
 
