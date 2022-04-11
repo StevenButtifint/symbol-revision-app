@@ -155,8 +155,8 @@ class symbolRevisionWindow:
                     else:
                         self.introducePage()                
 
-        elif tile["bg"] != "red":
-            tile["bg"] = "red"
+        elif tile["bg"] != COLOUR_INCORRECT:
+            tile["bg"] = COLOUR_INCORRECT
             print("wrong")
 
 
