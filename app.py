@@ -107,14 +107,9 @@ class symbolRevisionWindow:
 
         #load all png items from pack location
         all_items = self.getItems(f'res/packs/{self.current_pack}', "png")
-
         #pick name from pack and add to end of question
         self.correct_item = os.path.basename(random.choice(self.introduced_items))[:-4]
-        
-        question_label = Label(header_frame, font=("Avalon", 20), text="What is the image for\n " +
-                               self.correct_item, bg=self.bg_colour)
-        question_label.place(relx=0.5, rely=0.5, anchor="center")
-
+        question_label = self._makeLabel(header_frame, (FONT_TYPE, 20), "What is the image for\n " + self.correct_item, FONT_COLOUR, COLOUR_LIGHT, 0.5, 0.5,"center")
         random.shuffle(self.introduced_items)
 
         tile_images = []
