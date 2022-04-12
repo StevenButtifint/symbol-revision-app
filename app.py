@@ -101,10 +101,9 @@ class symbolRevisionWindow:
 
     def makeRoundPage(self):
 
-        round_frame = self.makeFrame(self.window, 0, 0, 1, 1, "nw", "black")
-        
-        header_frame = self.makeFrame(round_frame, 0, 0, 1, 0.3, "nw", self.bg_colour)
-        tiles_frame = self.makeFrame(round_frame, 0, 0.3, 1, 0.7, "nw", self.bg_colour)
+        round_frame = self.makeFrame(self.window, 0, 0, 1, 1, "nw", COLOUR_LIGHT)
+        header_frame = self.makeFrame(round_frame, 0, 0, 1, 0.3, "nw", COLOUR_LIGHT)
+        tiles_frame = self.makeFrame(round_frame, 0, 0.3, 1, 0.7, "nw", COLOUR_LIGHT)
 
         #load all png items from pack location
         all_items = self.getItems(f'res/packs/{self.current_pack}', "png")
