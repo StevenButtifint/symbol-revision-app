@@ -174,8 +174,8 @@ class symbolRevisionWindow:
 
 
     def getTileImage(self, img_name, w, h):
-        image = self.getImage(img_name)
-        image = self.resizeImage(image, w, h)
+        image = Image.open(img_name)
+        image = image.resize((w, h))
         return ImageTk.PhotoImage(image)
 
 
