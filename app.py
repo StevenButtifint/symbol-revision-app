@@ -120,12 +120,11 @@ class symbolRevisionWindow:
             tile_names.append(os.path.basename(item)[:-4])
 
         for x in range(len(self.introduced_items)):
-            tile = Button(tiles_frame, image=tile_images[x])
+            tile = self._makeButton(tiles_frame, (FONT_TYPE, 16), "", COLOUR_DARK, ((x%4)*0.25), ((x//4)*0.25), 0.25, 0.25, "nw", lambda: quit())
+            tile["image"] = tile_images[x]            
             tile["command"] = lambda name=tile_names[x], tile=tile: self.checkTileClick(name, tile, question_label)
-            tile["bg"] = self.fg_colour
-            tile.place(relx=((x%4)*0.25), rely=((x//4)*0.25), relw=0.25, relh=0.25, anchor="nw")
 
-        mainloop()#makes images show on buttons keeps page live?
+        root.mainloop()
 
 
     def checkTileClick(self, tile_name, tile, question_label):
