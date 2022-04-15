@@ -74,8 +74,7 @@ class symbolRevisionWindow:
         
 
     def introducePage(self):
-        introduction_frame = self.makeFrame(self.window, 0, 0, 1, 1, "nw", self.bg_colour)
-
+        introduction_frame = self.makeFrame(self.window, 0, 0, 1, 1, "nw", COLOUR_LIGHT)
         #pick random item, add to introduced list
         new_item = random.choice(self.pack_items)
         self.introduced_items.append(new_item)
