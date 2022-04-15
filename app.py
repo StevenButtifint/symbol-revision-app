@@ -92,11 +92,8 @@ class symbolRevisionWindow:
         new_item_image = self.getTileImage(new_item, 300, 300)
         new_item_label = Label(introduction_frame, image = new_item_image)
         new_item_label.place(relx=0.5, rely=0.5, anchor="center")
-        
-        ok_button = Button(introduction_frame, font=("Avalon", 16), text="OK",
-                           bg=self.fg_colour, command=lambda: self.makeRoundPage())
-        ok_button.place(relx=0.5, rely=0.8, relw=0.2, relh=0.08, anchor="center")
         mainloop()
+        self._makeButton(introduction_frame, (FONT_TYPE, 16), "OK", COLOUR_DARK, 0.5, 0.8, 0.2, 0.08, "center", lambda: self.makeRoundPage())
 
 
     def makeRoundPage(self):
