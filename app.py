@@ -85,12 +85,9 @@ class symbolRevisionWindow:
             self.full_grid = True
 
         new_item_name = os.path.basename(new_item)[:-4]
-
-        question_label = Label(introduction_frame, font=("Avalon", 20), text="This is the image for \n" + new_item_name, bg=self.bg_colour)
-        question_label.place(relx=0.5, rely=0.25, anchor="center")
-
+        self._makeLabel(introduction_frame, (FONT_TYPE, 20), "This is the image for \n" + new_item_name, FONT_COLOUR, COLOUR_LIGHT, 0.5, 0.25,"center")
         new_item_image = self.getTileImage(new_item, 300, 300)
-        new_item_label = Label(introduction_frame, image = new_item_image)
+        new_item_label = tk.Label(introduction_frame, image = new_item_image)
         new_item_label.place(relx=0.5, rely=0.5, anchor="center")
         mainloop()
         self._makeButton(introduction_frame, (FONT_TYPE, 16), "OK", COLOUR_DARK, 0.5, 0.8, 0.2, 0.08, "center", lambda: self.makeRoundPage())
