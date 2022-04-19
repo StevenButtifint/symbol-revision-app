@@ -16,7 +16,7 @@ class symbolRevisionWindow:
         self.window.geometry("536x750")
         self.window.title("Symbol Reviser")
         self.window.iconbitmap("res/icons/icon.ico")
-        self.packs = self.getPacks("res/packs")
+        self.packs = listdir("res/packs")
         self.current_pack = self.packs[0]
         self.pack_items = []
         self.introduced_items = []
