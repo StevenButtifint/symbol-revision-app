@@ -4,9 +4,6 @@ import tkinter as tk
 import random
 import glob
 import os
-
-from tkinter import mainloop, Tk, Frame, Grid, N, E, S, W, Button, StringVar, OptionMenu, Label
-from PIL import Image, ImageTk
 from constants import *
 
 
@@ -23,8 +20,6 @@ class symbolRevisionWindow:
         self.lives = 3
         self.full_grid = False
         self.correct_item = ""
-        self.bg_colour = "PaleGreen3"
-        self.fg_colour = "PaleGreen4"
         self.makeHomePage()
 
 
