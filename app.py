@@ -83,8 +83,8 @@ class symbolRevisionWindow:
         new_item_image = self.getTileImage(new_item, 300, 300)
         new_item_label = tk.Label(introduction_frame, image = new_item_image)
         new_item_label.place(relx=0.5, rely=0.5, anchor="center")
-        mainloop()
         self._makeButton(introduction_frame, (FONT_TYPE, 16), "OK", COLOUR_DARK, 0.5, 0.8, 0.2, 0.08, "center", lambda: self.makeRoundPage())
+        root.mainloop()
 
 
     def makeRoundPage(self):
